@@ -1,185 +1,359 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Grid de Cards com Overlay</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      background-color: #eee;
-    }
-
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      max-width: 1600px;
-    }
-
-    .card {
-      position: relative;
-      width: 710px;
-      height: 780px;
-      border: 2px solid #ccc;
-      border-radius: 10px;
-      padding: 10px;
-      background-color: #800000;
-      color: #ffffff;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .card img,
-    .card .info {
-      transition: opacity 0.3s;
-      z-index: 1;
-    }
-
-    .card:hover img,
-    .card:hover .info {
-      opacity: 0;
-    }
-
-    .card .overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      opacity: 0;
-      transition: opacity 0.4s ease-in-out;
-      text-align: center;
-      color: #000000;
-      z-index: 2;
-    }
-
-    .card:hover .overlay {
-      opacity: 1;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to right, #ffffff, #cccccc);
-      transition: left 0.4s ease-in-out;
-      z-index: 0;
-    }
-
-    .card:hover::before {
-      left: 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/galeria.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/carousel.css">
 </head>
 <body>
-  <div class="container">
-    <div class="card">
-      <img src="/img_livros/capa3.jpg" alt="Capa do livro 1" />
-      <div class="overlay">
-        <h2>Título 1</h2>
-        <p>Sinopse do livro 1.</p>
-      </div>
-      <div class="info">
-        <h2>Título 1</h2>
-        <p>Sinopse do livro 1.</p>
-      </div>
+
+    <!-- MENU-->
+
+    <header id="header">
+	<nav class="links" style="--items: 5;">
+        <a href="../index.html">HOME</a>
+		<a href="../html/livros.html">LIVROS</a>
+		<a href="../html/personagens.html">PERSONAGENS</a>
+        <a href="#">LINHA DO TEMPO</a>
+        <a href="#">ARVORE FAMILIAR</a>
+		<a href="#">AUTORA</a>
+		<span class="line"></span>
+	</nav>
+</header>
+
+
+    <!-- FIM MENU -->
+
+
+
+  <section>
+    <div class="containercarousel">
+        <div class="carousel">
+            <input type="radio" name="slides" checked="checked" id="slide-1">
+            <input type="radio" name="slides" id="slide-2">
+            <input type="radio" name="slides" id="slide-3">
+            <input type="radio" name="slides" id="slide-4">
+            <input type="radio" name="slides" id="slide-5">
+            <input type="radio" name="slides" id="slide-6">
+            <ul class="carousel__slides">
+                <li class="carousel__slide">
+                    <figure>
+                        <div>
+                            <img src="../img_home/1.png" alt="">
+                        </div>
+                        <figcaption>
+                            It is a long established fact that a reader will be distracted by the readable content of a page
+                        when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                        distribution of letters, as opposed to using 'Content here, content here', making it look like
+                        readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
+                        their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
+                        their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
+                        purpose (injected humour and the like).
+                            <span class="credit">Photo: Tim Marshall</span>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="carousel__slide">
+                    <figure>
+                        <div>
+                            <img src="../img_home/2.png" alt="">
+                        </div>
+                        <figcaption>
+                            It is a long established fact that a reader will be distracted by the readable content of a page
+                        when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                        distribution of letters, as opposed to using 'Content here, content here', making it look like
+                        readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
+                        their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
+                        their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
+                        purpose (injected humour and the like).
+                            <span class="credit">Photo: Christian Joudrey</span>                            
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="carousel__slide">
+                    <figure>
+                        <div>
+                            <img src="../img_home/3.png" alt="">
+                        </div>
+                        <figcaption>
+                            It is a long established fact that a reader will be distracted by the readable content of a page
+                        when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                        distribution of letters, as opposed to using 'Content here, content here', making it look like
+                        readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
+                        their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
+                        their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
+                        purpose (injected humour and the like).
+                            <span class="credit">Photo: Steve Carter</span>                            
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="carousel__slide">
+                    <figure>
+                        <div>
+                            <img src="../img_home/4.png" alt="">
+                        </div>
+                        <figcaption>
+                            It is a long established fact that a reader will be distracted by the readable content of a page
+                        when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                        distribution of letters, as opposed to using 'Content here, content here', making it look like
+                        readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
+                        their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
+                        their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
+                        purpose (injected humour and the like).
+                            <span class="credit">Photo: Aleksandra Boguslawska</span>                            
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="carousel__slide">
+                    <figure>
+                        <div>
+                            <img src="../img_home/5.png" alt="">
+                        </div>
+                        <figcaption>
+                            It is a long established fact that a reader will be distracted by the readable content of a page
+                        when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                        distribution of letters, as opposed to using 'Content here, content here', making it look like
+                        readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
+                        their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
+                        their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
+                        purpose (injected humour and the like).
+                            <span class="credit">Photo: Rosan Harmens</span>                            
+                        </figcaption>
+                    </figure>
+                </li>
+                <li class="carousel__slide">
+                    <figure>
+                        <div>
+                            <img src="../img_home/6.png" alt="">
+                        </div>
+                        <figcaption>
+                            It is a long established fact that a reader will be distracted by the readable content of a page
+                        when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+                        distribution of letters, as opposed to using 'Content here, content here', making it look like
+                        readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
+                        their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
+                        their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
+                        purpose (injected humour and the like).
+                            <span class="credit">Photo: Annie Spratt</span>                            
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>    
+            <ul class="carousel__thumbnails">
+                <li>
+                    <label for="slide-1"><img src="../img_home/1.png" alt=""></label>
+                </li>
+                <li>
+                    <label for="slide-2"><img src="../img_home/2.png" alt=""></label>
+                </li>
+                <li>
+                    <label for="slide-3"><img src="../img_home/3.png" alt=""></label>
+                </li>
+                <li>
+                    <label for="slide-4"><img src="../img_home/4.png" alt=""></label>
+                </li>
+                <li>
+                    <label for="slide-5"><img src="../img_home/5.png" alt=""></label>
+                </li>
+                <li>
+                    <label for="slide-6"><img src="../img_home/6.png" alt=""></label>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+    <!-- CARROSEL-->
+   
+        </div>
+     <div class="post">
+        <img src="../img_livros/livro1.jpg" alt="Imagem de capa">
+        <div class="content">
+            <h2>2</h2>
+            <p><strong>Russ Beye</strong> • 2 anos atrás</p>
+            <p>Eu adoro trabalhar com novos designs. Para isso, preciso renovar meu portfólio e buscar ideias inovadoras!</p>
+            <p>Tags: DESIGN | CREATIVE | PORTFOLIO</p>
+            <div class="interactions">
+                <span>❤️ 1</span>
+                <span>💬 1</span>
+            </div>
+        </div>
+    </div>
+     <div class="post">
+        <img src="../img_livros/livro2.jpg" alt="Imagem de capa">
+        <div class="content">
+            <h2>3</h2>
+            <p><strong>Russ Beye</strong> • 2 anos atrás</p>
+            <p>Eu adoro trabalhar com novos designs. Para isso, preciso renovar meu portfólio e buscar ideias inovadoras!</p>
+            <p>Tags: DESIGN | CREATIVE | PORTFOLIO</p>
+            <div class="interactions">
+                <span>❤️ 1</span>
+                <span>💬 1</span>
+            </div>
+        </div>
+    </div>
+     <div class="post">
+        <img src="../img_livros/livro3.jpg" alt="Imagem de capa">
+        <div class="content">
+            <h2>4</h2>
+            <p><strong>Russ Beye</strong> • 2 anos atrás</p>
+            <p>Eu adoro trabalhar com novos designs. Para isso, preciso renovar meu portfólio e buscar ideias inovadoras!</p>
+            <p>Tags: DESIGN | CREATIVE | PORTFOLIO</p>
+            <div class="interactions">
+                <span>❤️ 1</span>
+                <span>💬 1</span>
+            </div>
+        </div>
+    </div>
+     <div class="post">
+        <img src="../img_livros/livro4.jpg" alt="Imagem de capa">
+        <div class="content">
+            <h2>5</h2>
+            <p><strong>Russ Beye</strong> • 2 anos atrás</p>
+            <p>Eu adoro trabalhar com novos designs. Para isso, preciso renovar meu portfólio e buscar ideias inovadoras!</p>
+            <p>Tags: DESIGN | CREATIVE | PORTFOLIO</p>
+            <div class="interactions">
+                <span>❤️ 1</span>
+                <span>💬 1</span>
+            </div>
+        </div>
+    </div>
+     <div class="post">
+        <img src="../img_livros/livro5.jpg" alt="Imagem de capa">
+        <div class="content">
+            <h2>6</h2>
+            <p><strong>Russ Beye</strong> • 2 anos atrás</p>
+            <p>Eu adoro trabalhar com novos designs. Para isso, preciso renovar meu portfólio e buscar ideias inovadoras!</p>
+            <p>Tags: DESIGN | CREATIVE | PORTFOLIO</p>
+            <div class="interactions">
+                <span>❤️ 1</span>
+                <span>💬 1</span>
+            </div>
+        </div>
+    </div>
+     <div class="post">
+        <img src="../img_livros/livro6.jpg" alt="Imagem de capa">
+        <div class="content">
+            <h2>7</h2>
+            <p><strong>Russ Beye</strong> • 2 anos atrás</p>
+            <p>Eu adoro trabalhar com novos designs. Para isso, preciso renovar meu portfólio e buscar ideias inovadoras!</p>
+            <p>Tags: DESIGN | CREATIVE | PORTFOLIO</p>
+            <div class="interactions">
+                <span>❤️ 1</span>
+                <span>💬 1</span>
+            </div>
+        </div>
+    </div>
+     <div class="post">
+        <img src="../img_livros/livro7.jpg" alt="Imagem de capa">
+        <div class="content">
+            <h2>8</h2>
+            <p><strong>Russ Beye</strong> • 2 anos atrás</p>
+            <p>Eu adoro trabalhar com novos designs. Para isso, preciso renovar meu portfólio e buscar ideias inovadoras!</p>
+            <p>Tags: DESIGN | CREATIVE | PORTFOLIO</p>
+            <div class="interactions">
+                <span>❤️ 1</span>
+                <span>💬 1</span>
+            </div>
+        </div>
+    </div>
+  <div class="post">
+        <img src="../img_livros/livro8.jpg" alt="Imagem de capa">
+        <div class="content">
+            <h2>8</h2>
+            <p><strong>Russ Beye</strong> • 2 anos atrás</p>
+            <p>Eu adoro trabalhar com novos designs. Para isso, preciso renovar meu portfólio e buscar ideias inovadoras!</p>
+            <p>Tags: DESIGN | CREATIVE | PORTFOLIO</p>
+            <div class="interactions">
+                <span>❤️ 1</span>
+                <span>💬 1</span>
+            </div>
+        </div>
+    </div>
+     <div class="post">
+        <img src="../img_livros/livro9.jpg" alt="Imagem de capa">
+        <div class="content">
+            <h2>8</h2>
+            <p><strong>Russ Beye</strong> • 2 anos atrás</p>
+            <p>Eu adoro trabalhar com novos designs. Para isso, preciso renovar meu portfólio e buscar ideias inovadoras!</p>
+            <p>Tags: DESIGN | CREATIVE | PORTFOLIO</p>
+            <div class="interactions">
+                <span>❤️ 1</span>
+                <span>💬 1</span>
+            </div>
+        </div>
+    </div>
+     <div class="post">
+        <img src="../img_livros/livro10.jpg" alt="Imagem de capa">
+        <div class="content">
+            <h2>8</h2>
+            <p><strong>Russ Beye</strong> • 2 anos atrás</p>
+            <p>Eu adoro trabalhar com novos designs. Para isso, preciso renovar meu portfólio e buscar ideias inovadoras!</p>
+            <p>Tags: DESIGN | CREATIVE | PORTFOLIO</p>
+            <div class="interactions">
+                <span>❤️ 1</span>
+                <span>💬 1</span>
+            </div>
+        </div>
+    </div>
+     <div class="post">
+        <img src="../img_livros/livro11.jpg" alt="Imagem de capa">
+        <div class="content">
+            <h2>8</h2>
+            <p><strong>Russ Beye</strong> • 2 anos atrás</p>
+            <p>Eu adoro trabalhar com novos designs. Para isso, preciso renovar meu portfólio e buscar ideias inovadoras!</p>
+            <p>Tags: DESIGN | CREATIVE | PORTFOLIO</p>
+            <div class="interactions">
+                <span>❤️ 1</span>
+                <span>💬 1</span>
+            </div>
+        </div>
+    </div>
+     <div class="post">
+        <img src="../img_livros/livro12.jpg" alt="Imagem de capa">
+        <div class="content">
+            <h2>8</h2>
+            <p><strong>Russ Beye</strong> • 2 anos atrás</p>
+            <p>Eu adoro trabalhar com novos designs. Para isso, preciso renovar meu portfólio e buscar ideias inovadoras!</p>
+            <p>Tags: DESIGN | CREATIVE | PORTFOLIO</p>
+            <div class="interactions">
+                <span>❤️ 1</span>
+                <span>💬 1</span>
+            </div>
+        </div>
     </div>
 
-    <div class="card">
-      <img src="img_livros/livro1.jpg" alt="Capa do livro 2" />
-      <div class="overlay">
-        <h2>Título 2</h2>
-        <p>Sinopse do livro 2.</p>
-      </div>
-      <div class="info">
-        <h2>Título 2</h2>
-        <p>Sinopse do livro 2.</p>
-      </div>
+
+<! -- GALERIA -->
+
+ <div class="gallery">
+        <div class="photo">
+            <div class="background"></div>
+            <img src="1.png" alt="Foto 1">
+            <p class="description">vampiros</p>
+        </div>
+        <div class="photo">
+            <div class="background"></div>
+            <img src="2.png" alt="Foto 2">
+            <p class="description">anjos</p>
+        </div>
+        <div class="photo">
+            <div class="background"></div>
+            <img src="3.png" alt="Foto 3">
+            <p class="description">lobisomens</p>
+        </div>
     </div>
 
-    <div class="card">
-      <img src="./img_livros/capa3.jpg" alt="Capa do livro 3" />
-      <div class="overlay">
-        <h2>Título 3</h2>
-        <p>Sinopse do livro 3.</p>
-      </div>
-      <div class="info">
-        <h2>Título 3</h2>
-        <p>Sinopse do livro 3.</p>
-      </div>
-    </div>
 
-    <div class="card">
-      <img src="./img_livros/capa3.jpg" alt="Capa do livro 4" />
-      <div class="overlay">
-        <h2>Título 4</h2>
-        <p>Sinopse do livro 4.</p>
-      </div>
-      <div class="info">
-        <h2>Título 4</h2>
-        <p>Sinopse do livro 4.</p>
-      </div>
-    </div>
 
-    <div class="card">
-      <img src="./img_livros/capa3.jpg" alt="Capa do livro 5" />
-      <div class="overlay">
-        <h2>Título 5</h2>
-        <p>Sinopse do livro 5.</p>
-      </div>
-      <div class="info">
-        <h2>Título 5</h2>
-        <p>Sinopse do livro 5.</p>
-      </div>
-    </div>
+<! -- GALERIA -->
 
-    <div class="card">
-      <img src="./img_livros/capa1.jpg"  alt="Capa do livro 6" />
-      <div class="overlay">
-        <h2>Título 6</h2>
-        <p>Sinopse do livro 6.</p>
-      </div>
-      <div class="info">
-        <h2>Título 6</h2>
-        <p>Sinopse do livro 6.</p>
-      </div>
-    </div>
 
-    <div class="card">
-      <img src="./img_livros/capa2.jpg"  alt="Capa do livro 7" />
-      <div class="overlay">
-        <h2>Título 7</h2>
-        <p>Sinopse do livro 7.</p>
-      </div>
-      <div class="info">
-        <h2>Título 7</h2>
-        <p>Sinopse do livro 7.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="./img_livros/capa3.jpg" alt="Capa do livro 8" />
-      <div class="overlay">
-        <h2>Título 8</h2>
-        <p>Sinopse do livro 8.</p>
-      </div>
-      <div class="info">
-        <h2>Título 8</h2>
-        <p>Sinopse do livro 8.</p>
-      </div>
-    </div>
-  </div>
 </body>
 </html>
+
