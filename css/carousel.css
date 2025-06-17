@@ -92,10 +92,10 @@ section {
         margin: 0;
     }
     
-    div {
-        @include aspect-ratio(3, 2);
-        width: 100%;
-    }
+     div {
+    @include aspect-ratio(3, 2.5); /* <-- AQUI ESTÁ A ALTERAÇÃO PARA AUMENTAR A ALTURA */
+    width: 100%;
+  }
     
     img {
         display: block;
