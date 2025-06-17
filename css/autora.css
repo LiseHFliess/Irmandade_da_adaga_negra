@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.h1autora {
+    background-color: #6b241d;
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+}
+
+.perfil {
+    margin: 20px auto;
+    width: 60%;
+}
+
+.perfil img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+.livros {
+    margin: 20px auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-content: center;
+}
+
+.grid img {
+    width: 150px;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
